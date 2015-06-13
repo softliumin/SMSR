@@ -1,0 +1,17 @@
+<html>
+<head>
+<title>Test add</title>
+</head>
+<body>
+
+	<form action="/S/savePerson" >
+		id: <input type="text" name="id" ><br/>
+		loginId:<input type="text" name="loginId" >	<br/>
+		password:<input type="password" name="password" >	<br/>
+		<input type="submit"  value="submit"/>
+		<input type="reset" value="reset">
+    </form>
+	
+	
+</body>
+</html>

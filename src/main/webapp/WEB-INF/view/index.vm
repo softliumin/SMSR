@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>Test</title>
+<link rel="Stylesheet" type="text/css" href=""/>
+<style type="text/css">
+	td {height:30px;}
+	th {height:30px;}
+	a{text-destation:none;}
+</style>
+<script src="/S/js/jquery-1.11.3.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+	});
+	
+	function deletePerson(id)
+	{
+		var ss = confirm("你确定删除吗？");
+		if(ss)
+		{
+			$.ajax({
+            		type:'post',  
+            		dataType:'json',
+            		data: {id:id},
+            		url:'/S/deletePerson',
+            		success : function(data, status) 
+            		{
+						if(data.success)
+						{
+							alert("删除ok！");
+							$("#"+id).remove();
+						}else
+						{
+							alert("删除出错！");
+						}
+            			
+            		}
+            	});
+		}else
+		{
+			alert(2);
+		}
+	}
+</script>
+</head>
+
+<body>
+<h1>show All</h1>
+${message}
+
+<h2>循环测试</h2>
+<table style="width:800px;border:1px solid red;text-align:center;">
+	<tr >
+        <th>id</th>
+		<th>loginID</th>
+		<th>password</th>
+		<th>update</th>
+		<th>delete</th>
+    </tr>	
+	#foreach($person in $!list)
+	<tr id="$!person.id">	
+		<td>$!person.loginId </td>  
+		<td> $!person.id </td>    
+		<td> $!person.password  </td>
+        <td> <a href="/S/updatePerson" >update</a>  </td>
+        <td> <a onclick="javascript:deletePerson('$!person.id');">delete</a>  </td>
+	</tr>
+#end
+		
+	
+</table>	
+
+
+
+<a href="">测试增加</a><br>
+
+<a href="">测试删除</a><br>
+
+
+<a href="">测试修改</a><br>
+
+
+
+</body>
+</html>
