@@ -11,4 +11,6 @@ public interface PersonMapper
 	public void addPerson(Person person);
 	
 	public int deletePerson(String id);
+	
+	public Person getById(String id);
 }

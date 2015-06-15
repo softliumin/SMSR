@@ -12,11 +12,19 @@
 		SELECT * FROM person
 	</select>
 	
+	<!-- 按照主键查询 -->
+	<select id="getById" parameterType="java.lang.String" resultType="PersonMap" >
+		SELECT * FROM PERSON WHERE id=#{id}
+	</select>
+	
+	
+	
+	
 	<insert id="addPerson" parameterType="cc.sharper.bean.Person">
 		insert into person(id,loginId,password) values(#{id},#{loginId},#{password})
 	</insert>
 	
-	<update id="updatePerson" >
+	<update id="updatePerson">
 	
 	</update>
 	

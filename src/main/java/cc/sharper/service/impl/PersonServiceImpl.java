@@ -43,6 +43,13 @@ public class PersonServiceImpl implements PersonService
 	{
 		 int num =  peresonMapper.deletePerson(id);
 		 return num;
-		
 	}
+	
+	@Override
+	public Person getById(String id)
+	{
+		
+		return peresonMapper.getById(id);
+	}
+	
 }

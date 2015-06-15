@@ -53,6 +53,21 @@ public class IndexController
 		return mv;
 	}
 	
+	//跳转到更新的页面
+	@RequestMapping(value="toUpdatePersons",method = RequestMethod.GET)
+	public ModelAndView toUpdatePerson(@RequestParam(value="id",required = false) String id)
+	{
+		
+		ModelAndView mv = new ModelAndView();
+		
+		
+		Person person = personService.getById(id);
+		mv.addObject("person", person);
+		mv.setViewName("toUpdatePerson");
+		
+		return mv;
+	}
+	
 	@RequestMapping(value = "/savePerson")
 	public ModelAndView savePerson(HttpServletRequest request, Person person)
 	{
