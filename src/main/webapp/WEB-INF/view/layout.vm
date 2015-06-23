@@ -1,13 +1,18 @@
 <html>
     <head>
-        <title>Spring MVC and Velocity</title>
+        <title>京东金融社区</title>
+		<link rel="Stylesheet" type="text/css" href="/css/main.css"/>
+<style type="text/css">
+	
+</style>
     </head>
     <body>
-        <h1>Spring MVC and Velocity</h1>
+        <div id="mainTitle"></div>
 
         $screen_content
 
-        <hr />
-        Copyright &copy 2014 lm
+       
+       <div id="mainBottom"></div>
+       </div>
     </body>
 </html>

@@ -1,6 +1,7 @@
 package cc.sharper.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Person implements Serializable
 {
@@ -10,6 +11,18 @@ public class Person implements Serializable
 	private String loginId;
 	private String password;
 	
+	private List<Book> bookList;
+	
+	
+	
+	public List<Book> getBookList()
+	{
+		return bookList;
+	}
+	public void setBookList(List<Book> bookList)
+	{
+		this.bookList = bookList;
+	}
 	public String getId()
 	{
 		return id;

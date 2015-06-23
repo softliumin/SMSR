@@ -5,8 +5,8 @@
 <body>
  
 
-	<form action="/S/updatePerson" >
-		id: <input type="text" name="id" value="${person.id}"><br/>
+	<form action="/S/updatePerson" method="POST">
+		id: <input type="text" name="id" value="${person.id}" readonly ><br/>
 		loginId:<input type="text" name="loginId" value="${person.loginId}">	<br/>
 		<input type="submit"  value="submit"/>
 		<input type="reset" value="reset">

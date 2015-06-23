@@ -28,7 +28,10 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		<!-- 获取连接最大等待时间 -->
 		<property name="maxWait" value="60000" />
 
-		<!-- <property name="poolPreparedStatements" value="true" /> <property name="maxPoolPreparedStatementPerConnectionSize" value="33" /> -->
+		<!-- 
+		<property name="poolPreparedStatements" value="true" /> 
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="33" />
+		 -->
 
 		<property name="validationQuery" value="${validationQuery}" />
 		<property name="testOnBorrow" value="false" />
@@ -54,7 +57,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 
 	<!-- myBatis文件 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="configLocation" value="classpath:/mybatis/mybatis-config.xml" />
+	
 		<property name="dataSource" ref="dataSource" />
+		
+		
+		
 		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
 		<property name="mapperLocations" value="classpath:/mybatis/**/*Mapper.xml" />
 	</bean>

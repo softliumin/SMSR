@@ -1,0 +1,35 @@
+body{
+	margin: 0 auto;
+	
+}
+#mainTitle
+{
+	height:175px;
+	width:1350px;
+	background-image:url('/images/title.PNG');
+} 
+#mainBottom
+{
+	height:229px;
+	width:1350px;
+	background-image:url('/images/bottom.PNG');
+}
+#mainContent
+{
+	margin: 0 auto;
+	width:1350px;
+}
+#mainTable
+{
+	width:800px;
+	text-align:center;
+	margin: 0 auto;
+}
+a
+{
+	text-decoration: none;
+}
+.page
+{
+		
+}

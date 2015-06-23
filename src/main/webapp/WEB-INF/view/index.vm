@@ -7,8 +7,14 @@
 	th {height:30px;}
 	a{text-destation:none;}
 </style>
-<script src="/S/js/jquery-1.11.3.js" type="text/javascript"></script>
+<script src="/js/jquery-1.11.3.js" type="text/javascript"></script>
 <script type="text/javascript">
+
+function changeCurrentPage(currentPage,i) 
+{
+	var page = currentPage+i;
+	window.location.href="/page?page="+page;
+}
 	$(document).ready(function(){
 		
 	});
@@ -22,7 +28,7 @@
             		type:'post',  
             		dataType:'json',
             		data: {id:id},
-            		url:'/S/deletePerson',
+            		url:'/deletePerson',
             		success : function(data, status) 
             		{
 						if(data.success)
@@ -45,11 +51,14 @@
 </head>
 
 <body>
-<h1>show All</h1>
-${message}
 
-<h2>循环测试</h2>
-<table style="width:800px;border:1px solid red;text-align:center;">
+##${message}
+
+##<h2>循环测试</h2>
+#d()
+
+<div id="mainContent">
+<table style="" id="mainTable"  cellspacing="0" cellpadding="0" bordercolor="#DBEAF9" border="1" >
 	<tr >
         <th>id</th>
 		<th>loginID</th>
@@ -59,27 +68,22 @@ ${message}
     </tr>	
 	#foreach($person in $!list)
 	<tr id="$!person.id">	
-		<td>$!person.loginId </td>  
-		<td> $!person.id </td>    
+		<td>$!person.id </td>  
+		<td> $!person.loginId </td>    
 		<td> $!person.password  </td>
-        <td> <a href="/S/updatePerson" >update</a>  </td>
+        <td> <a href="/toUpdatePerson?id=$!person.id" >update</a>  </td>
         <td> <a onclick="javascript:deletePerson('$!person.id');">delete</a>  </td>
 	</tr>
 #end
-		
-	
 </table>	
+</div>
+<div class='page'>
+	共 <b> $!page.totalNumber </b> 条
+	<a href="javascript:changeCurrentPage(1,0)">首页</a>
+		<a href="javascript:changeCurrentPage($!page.currentPage,-1)" class='next'>上一页</a>
+		<a href="javascript:changeCurrentPage($!page.currentPage,1)"  class='next'>下一页</a>
+	<a href="javascript:changeCurrentPage($!page.totalPage,0)">末页</a>
 
-
-
-<a href="">测试增加</a><br>
-
-<a href="">测试删除</a><br>
-
-
-<a href="">测试修改</a><br>
-
-
-
+</div>
 </body>
 </html>
